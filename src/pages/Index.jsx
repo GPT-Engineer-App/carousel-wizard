@@ -17,8 +17,15 @@ const carouselItems = [
   },
 ];
 
+const fadeIn = `
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+`;
+
 const CarouselItem = ({ src, description }) => (
-  <Box position="relative" height="100%">
+  <Box position="relative" height="100%" animation="fadeIn 1s ease-in-out" css={fadeIn}>
     <Image src={src} alt={description} fit="cover" w="full" h="full" />
     <Text position="absolute" bottom="4" left="4" color="white" fontSize="lg" fontWeight="bold" bg="rgba(0, 0, 0, 0.5)" p="2" borderRadius="md">
       {description}
